@@ -86,7 +86,7 @@ pipeline {
         }
         stage('check stage website availability') {
             steps {
-                 sh "sleep 90"
+                 sh "sleep 200"
                  sh "curl -s -o /dev/null -w \"%{http_code}\" https://stage.edenboutique.space"
                 script {
                     def response = sh(script: "curl -s -o /dev/null -w \"%{http_code}\" https://stage.edenboutique.space", returnStdout: true).trim()
